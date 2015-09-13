@@ -27,7 +27,7 @@ The system will let you organize large numbers of volunteers for configurable ta
   - Each tasks are "open" in the task list until it is fully allocated
 
 ##### TODO list (list of onetime tasks)
-- list of one time tasks that needs to be handled
+- list of one-time tasks that needs to be handled
 
 
 ##### Admin view
