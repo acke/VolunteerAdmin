@@ -8,18 +8,18 @@ The system will let you organize large numbers of volunteers for configurable ta
 #### System parts
 
 ##### Volunteer entry and database
-- Add volunteer (name, phone number, email, availablility, competences, ..more reusable labels)
+- Add volunteer (name, phone number, email, availability, competences, ..more reusable labels)
 
 ##### Volunteer search 
 - name
 - Competence
 - Availability
-- Experience/prefered
+- Experience/preferred
 
 ##### Scheduling
 - create new task/s
   - reminder
-  - reoccurance
+  - reoccurrence
   - Allocation (requested number of persons/resources)
   - individual editing of tasks (even if it is created as a recurrent task)
 
@@ -36,7 +36,7 @@ The system will let you organize large numbers of volunteers for configurable ta
 - Volunteer add/update
  
 
-##### Volunteer/user view (volunteerform)
+##### Volunteer/user view (volunteer-form)
 - Register as user/volunteer (https://docs.google.com/forms/d/1zLLxrThzt2efFcIZ28Y-ZiSCD8cWO-q3RA5dKldQIII/viewform)
 - View users schedule
 - Volunteer for recurring task
@@ -49,7 +49,7 @@ The system will let you organize large numbers of volunteers for configurable ta
 
 ##### API:s
 - Import users from Excel/csv
-- Export to Google calender events (email & SMS reminders)
+- Export to Google calendar events (email & SMS reminders)
 
 ### Usage flows
 
@@ -62,7 +62,7 @@ Administrator populate event
 
 0. Admin creates the event, and decides when in time it needs to happen.
 1. Administrator reviews list of unassigned tasks/events.
-2. Admins gets a suggested list of persons for the task/event, that are avaible for this time slot
+2. Admins gets a suggested list of persons for the task/event, that are available for this time slot
 3. Admin assigns person to the slot.
 4. Admin creates a standby list for the task/event.
 
@@ -91,4 +91,3 @@ Medical care unit
 * Review MyCharityManager.com is a feature-rich free web tool that lets you track volunteers, events, and donations all in one place.
 * Review http://www.capterra.com/volunteer-management-software/
 * Review http://yourvolunteers.com/
-
