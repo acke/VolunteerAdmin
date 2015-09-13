@@ -17,7 +17,7 @@ The system will let you organize large numbers of volunteers for configurable ta
 - Competence
 - Availability
 - Experience/prefered
-- 
+
 
 ##### Scheduling
 - create new task/s
@@ -38,14 +38,14 @@ The system will let you organize large numbers of volunteers for configurable ta
 - Task creation
 - Scheduling
 - Volunteer add/update
-- 
+ 
 
 ##### Volunteer/user view (volunteerform)
 - Register as user/volunteer (https://docs.google.com/forms/d/1zLLxrThzt2efFcIZ28Y-ZiSCD8cWO-q3RA5dKldQIII/viewform)
 - View users schedule
 - Volunteer for reoccuring task
 - Volunteer for single usage task
-- 
+ 
 
 ##### API:s
 - Import users from Excel/csv
