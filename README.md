@@ -3,8 +3,6 @@
 The system will let you organize large numbers of volunteers for configurable tasks.
 
 
-
-
 ### Requirement 
 
 #### System parts
@@ -17,7 +15,6 @@ The system will let you organize large numbers of volunteers for configurable ta
 - Competence
 - Availability
 - Experience/prefered
-
 
 ##### Scheduling
 - create new task/s
@@ -47,20 +44,40 @@ The system will let you organize large numbers of volunteers for configurable ta
 - Volunteer for single usage task
  
 
+##### Schedule overview
+- A view to see who is doing what
+
+
 ##### API:s
 - Import users from Excel/csv
 - Export to Google calender events (email & SMS reminders)
 
+### Usage flows
+
+Volunteer registration
+
+1. User registers
+
+
+Administrator populate event
+
+0. Admin creates the event, and decides when in time it needs to happen.
+1. Administrator reviews list of unassigned tasks/events.
+2. Admins gets a suggested list of persons for the task/event, that are avaible for this time slot
+3. Admin assigns person to the slot.
+4. Admin creates a standby list for the task/event.
+
+
 #### Resources
 
 
-Info/volunteer administration
+#### Info/volunteer administration
 
 Housecare
 
 Interpreters
 
-Transportation ()
+Transportation (drive and deliver things.)
 
 Food (cooking)
 
