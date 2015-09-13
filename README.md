@@ -88,7 +88,7 @@ Medical care unit
 
 * Review Google calender tasks? for the TODO list
 * Review https://www.volunteerspot.com/mobile-demo
-* Review http://www.wildapricot.com/blogs/newsblog/2009/08/19/6-free-or-cheap-web-tools-to-schedule-volunteers
+* Review MyCharityManager.com is a feature-rich free web tool that lets you track volunteers, events, and donations all in one place.
 * Review http://www.capterra.com/volunteer-management-software/
 * Review http://yourvolunteers.com/
 
