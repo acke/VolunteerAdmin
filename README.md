@@ -51,6 +51,7 @@ The system will let you organize large numbers of volunteers for configurable ta
 - Import users from Excel/csv
 - Export to Google calendar events (email & SMS reminders)
 
+
 ### Usage flows
 
 Volunteer registration
@@ -95,3 +96,7 @@ Medical care unit
 
 * Review google forms for event posting (https://drive.google.com/previewtemplate?id=0AqIZhq-ehXLFdDNvVmU1Q0x0ZnhMVU9CNnFwaU1qb2c&mode=public)
 * Make calender events from forms responses https://developers.google.com/apps-script/quickstart/forms !!!
+
+
+#### Web/development resources
+* https://developers.google.com/google-apps/calendar/v3/reference/calendars
