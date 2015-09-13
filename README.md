@@ -22,14 +22,13 @@ The system will let you organize large numbers of volunteers for configurable ta
   - reoccurance
   - Allocation (requested number of persons/resources)
   - individual editing of tasks (even if it is created as a recurrent task)
-(AP: review Google calender tasks?)
 
 ##### To plan tasks list (List of unplanned tasks)
   - Each tasks are "open" in the task list until it is fully allocated
 
 ##### TODO list (list of onetime tasks)
 - list of one time tasks that needs to be handled
-(AP: review Google Tasks?)
+
 
 ##### Admin view
 - Task creation
@@ -82,3 +81,14 @@ Transportation (drive and deliver things.)
 Food (cooking)
 
 Medical care unit
+
+
+
+### TODOS:
+
+* Review Google calender tasks? for the TODO list
+* Review https://www.volunteerspot.com/mobile-demo
+* Review http://www.wildapricot.com/blogs/newsblog/2009/08/19/6-free-or-cheap-web-tools-to-schedule-volunteers
+* Review http://www.capterra.com/volunteer-management-software/
+* Review http://yourvolunteers.com/
+
