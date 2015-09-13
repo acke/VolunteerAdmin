@@ -7,7 +7,7 @@ The system will let you organize large numbers of volunteers for configurable ta
 
 #### System parts
 
-##### Volunteer entry database
+##### Volunteer entry and database
 - Add volunteer (name, phone number, email, availablility, competences, ..more reusable labels)
 
 ##### Volunteer search 
