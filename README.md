@@ -110,3 +110,11 @@ Medical care unit
   
 * Centeralized schedualing
   * One person at the time manages all events in one scheduale.
+  * 
+  
+#### System evaluation
+
+* volunteerspot, does this scale to hundreds of volunteers?
+  * Its free
+  * simple interface
+  * People can sign up for tasks
