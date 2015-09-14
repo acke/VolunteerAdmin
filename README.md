@@ -88,9 +88,6 @@ Medical care unit
 ### TODOS:
 
 * Review Google calender tasks? for the TODO list
-* Review https://www.volunteerspot.com/mobile-demo
-* Review MyCharityManager.com is a feature-rich free web tool that lets you track volunteers, events, and donations all in one place.
-* Review http://www.capterra.com/volunteer-management-software/
 * Review http://yourvolunteers.com/
 
 
@@ -114,7 +111,16 @@ Medical care unit
   
 #### System evaluation
 
+* Review https://www.volunteerspot.com/mobile-demo
 * volunteerspot, does this scale to hundreds of volunteers?
   * Its free
   * simple interface
   * People can sign up for tasks
+  
+* http://www.betterimpact.com/volunteer-impact-pricing-standard/
+* volunteer-impact
+  * kostar upp till 10000/år
+  * Bra features
+  
+  
+
