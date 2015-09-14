@@ -100,3 +100,13 @@ Medical care unit
 
 #### Web/development resources
 * https://developers.google.com/google-apps/calendar/v3/reference/calendars
+
+
+#### Strategies
+
+* Decentralized calendar management
+  * One person manages resources wihin one area (transportation/medical/law/kitchen) in one calender
+  * One list of volunteers for all volunteers
+  
+* Centeralized schedualing
+  * One person at the time manages all events in one scheduale.
