@@ -67,6 +67,12 @@ Administrator populate event
 3. Admin assigns person to the slot.
 4. Admin creates a standby list for the task/event.
 
+Volunteer volunteers for events
+
+1. Volunteer searches for events in their competence area
+2. Volunteer selects an event when the Volunteer is available
+3. Volunteer sends in an volunteer request
+4. Administrator confirms
 
 #### Resources
 
