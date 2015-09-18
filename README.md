@@ -76,6 +76,9 @@ Volunteer volunteers for events
 
 #### Resources
 
+Query data between google sheets: 
+- https://productforums.google.com/forum/#!topic/docs/5y1iRQAhJ-k
+- http://support.blakeschool.org/entries/23030316-Query-Function-to-Obtain-Data-from-One-Spreadsheet-and-Link-into-another-in-Google-Spreadsheets
 
 #### Info/volunteer administration
 
