@@ -1,7 +1,6 @@
 For this file:
 https://docs.google.com/spreadsheets/d/1rz7yv8YAbzDhEAWPF0rliCRJTxZl1JHMH_v3A3qX_q8/edit#gid=1386834576
 
-
 /**
  * A special function that inserts a custom menu when the spreadsheet opens.
  */
@@ -125,7 +124,7 @@ function onFormSubmit(e) {
      .getDataRange().getValues();
   for (var i = 1; i < values.length; i++) {
     var session = values[i];
-    var title = session[0];
+    var title = session[2];
     var day = session[4].toLocaleDateString();
     var time = session[5].toLocaleTimeString();
     var timeslot = time + ' ' + day;
