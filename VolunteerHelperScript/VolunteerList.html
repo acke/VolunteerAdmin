@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <base target="_top">
+     <script>
+      function updateUrl(url) {
+        var div = document.getElementById('output');
+        div.innerHTML = url ;
+      }
+    </script>
+  </head>
+  <body>
+         
+  <form id="myForm">
+       <input type="button" value="klara 0707-1234567"
+        onclick="google.script.run
+            .withSuccessHandler(updateUrl)
+            .getVolunteers(this.parentNode)" />
+        <input type="button" value="klara 0707-1234567"
+        onclick="google.script.run
+            .withSuccessHandler(updateUrl)
+            .getVolunteers(this.parentNode)" />
+            
+    </form>
+    <div id="output"></div>
+    
+    <input type="button" value="Close"
+        onclick="google.script.host.close()" />
+        
+         <input type="button" value="Load More"
+        onclick="google.script.run.loadmore()" />
+  </body>
+</html>

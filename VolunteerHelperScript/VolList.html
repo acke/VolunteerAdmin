@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <base target="_top">
+    
+  </head>
+  <body>
+    <? 
+       var ss = SpreadsheetApp
+        .openById('1YOXKRsaKrCQhKOuJkXnAKyLvIhxu9rhV0OxIEPn6xNI');
+      var sheet = ss.getSheetByName('Formulärsvar 1');
+      var values = sheet.getDataRange().getValues();
+      var headers = values.shift();
+      
+//      var fnIndex = headers.indexOf(“Förnamn”);
+//      var lnIndex = headers.indexOf(“Efternamn”);
+      var phone = headers.indexOf(“Telefonnummer”);
+      
+     // for (var i=0; i<values.length; i++) {
+      //var firstName = values[i][fnIndex];
+      //var lastName = values[i][lnIndex ];
+      //var phone = values[i][phone];
+      //}
+
+    ?>
+    
+    <table>
+      <? for (var i = 0; i < values.length; i++) { ?>
+        <tr>
+          <td><?= values[i][phone] ?></td>
+         </tr>
+      <? } ?>
+    </table>
+    success
+  </body>
+</html>
+
+<!--QUERY(IMPORTRANGE("1YOXKRsaKrCQhKOuJkXnAKyLvIhxu9rhV0OxIEPn6xNI", "'Formulärsvar 1'!A:O") ,"select Col2, Col3, Col4, Col5, Col6, Col10, Col11, Col12 where Col6 contains '19-22' and Col11 matches '.+' order by Col1")
+-->
