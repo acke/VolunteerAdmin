@@ -3,10 +3,10 @@ function onOpen(){
  //Add menu button to ui
  ui.createMenu('Volunteer Helper')
  .addItem('Get available voluteer', 'getVolonteer')
+ .addItem('Get available for selected time slot', 'getSelectedForTimeslot')
  .addSeparator()
- .addItem('Get available for Transporters', 'getTransporters')
+ .addItem('Mark Volunteer as Booked', 'booked')
  .addToUi();
-  
 }
 
 function getVolonteer(){
@@ -19,7 +19,7 @@ function getVolonteer(){
   var col = cell.getColumn();
   //Get the time, wich always is on the far left
   var time = sheet.getRange(row, 1);
-  //Print to browser alert box  
+  //Print to browser alert box
   SpreadsheetApp.getUi().alert("Time: " + time.getValue() + "\nHeader: " + getColumnHeader(row, col, sheet) + "\n" + getDay(sheet.getName()));
 }
 
@@ -71,10 +71,12 @@ function query(day, time, type){
   }
   Logger.log(volunteers);
   Logger.log("Nr volunteers: " + volunteers.length);
+  SpreadsheetApp.getUi().alert(volunteers);
   
 }
 
-function getTransporters(){
+function getSelectedForTimeslot(){
+  
   //Get the row and column indices of the selected cell
   var ss = SpreadsheetApp.getActiveSpreadsheet();
   var sheet = ss.getActiveSheet();
@@ -100,26 +102,21 @@ function getTransporters(){
       //var phone = values[i][phone];
       //}
   
-/*  var html =  HtmlService
+  var html =  HtmlService
       .createTemplateFromFile('VolList')
       .evaluate()
       .setSandboxMode(HtmlService.SandboxMode.IFRAME);
   SpreadsheetApp.getUi() // Or DocumentApp or FormApp.
-      .showSidebar(html);*/
+      .showSidebar(html);
   
+  /*
   var html = HtmlService.createHtmlOutputFromFile('VolunteerList')
      .setSandboxMode(HtmlService.SandboxMode.IFRAME)
      .setTitle('My custom sidebar')
      .setWidth(300);
  SpreadsheetApp.getUi() // Or DocumentApp or FormApp.
     .showSidebar(html);
-  
-  //Image/button for transporters
-  //make a panel
-  
-  //Query for Transporters
-
-  //List the Transporters for the timeslot to the left.
+  */
   
 }
 
@@ -147,11 +144,16 @@ function getColumnHeader(row, col, sheet){
 
 function getDay(dayString){
   var dayArray = dayString.split(" ");
+  var dayName = dayArray[0];
   var datum = dayArray[1];
   var day = datum.substring(4,6);
   var month = datum.substring(2,4);
   if (day.substring(0,1) == "0") day = day.replace("0", "");
   if (month.substring(0,1) == "0") month = month.replace("0", "");
   var formattedDate = "["+day+"/"+month+ "]";
-  return dayArray[0] + " " + formattedDate;
+  return dayName.substring(0,1) + dayName.substring(1, dayName.length).toLowerCase() + " " + formattedDate;
+}
+
+function booked(){
+  SpreadsheetApp.getUi().alert("Not implemented: mark this volunteer as booked, and save volunteer in experienced database.");
 }
