@@ -3,6 +3,7 @@ function onOpen(){
  //Add menu button to ui
  ui.createMenu('Volunteer Helper')
  .addItem('Get available voluteer', 'getVolonteer')
+ .addItem('Get available for selected time slot in Panel', 'getSelectedForTimeslotPanel')
  .addItem('Get available for selected time slot', 'getSelectedForTimeslot')
  .addSeparator()
  .addItem('Mark Volunteer as Booked', 'booked')
@@ -44,6 +45,8 @@ function query(day, time, type){
   
   var volunteers = [];
   for(var i=0;i<values.length;i++){
+    SpreadsheetApp.getUi().alert("Volunteers for the day: " + values.length);
+    
     if(typeIndex){
        if(values[i][dayIndex].indexOf(time)>-1 && values[i][typeIndex]){
          volunteer = {};
@@ -71,11 +74,32 @@ function query(day, time, type){
   }
   Logger.log(volunteers);
   Logger.log("Nr volunteers: " + volunteers.length);
-  SpreadsheetApp.getUi().alert(volunteers);
+
   
 }
 
 function getSelectedForTimeslot(){
+  
+     var ss = SpreadsheetApp.getActiveSpreadsheet();
+     var sheet = ss.getActiveSheet();
+  // Returns the active cell
+     var cell = sheet.getActiveCell();
+     var row = cell.getRowIndex();
+     var col = cell.getColumn();
+     
+     var time = sheet.getRange(row, 1);
+     var day = getDay(sheet.getName());
+
+     SpreadsheetApp.getUi().alert(time + day);
+     //query("Fredag [18/9]", "10-13", "Tolk");
+     //query(day, time, getColumnHeader(row, col, sheet));
+  
+     query(day, time);
+     SpreadsheetApp.getUi().alert(volunteers);  
+}
+
+
+function getSelectedForTimeslotPanel(){
   
   //Get the row and column indices of the selected cell
   var ss = SpreadsheetApp.getActiveSpreadsheet();
@@ -86,22 +110,7 @@ function getSelectedForTimeslot(){
   var col = cell.getColumn();
   var time = sheet.getRange(row, 1);
   
-     /*var ssVol = SpreadsheetApp
-        .openById('1YOXKRsaKrCQhKOuJkXnAKyLvIhxu9rhV0OxIEPn6xNI');
-      var sheetVol = ssVol.getSheetByName('Formulärsvar 1');
-      var valuesVol = sheetVol.getDataRange().getValues();
-      var headersVol = valuesVol.shift();*/
 
-//      var fnIndex = headers.indexOf(“Förnamn”);
-//      var lnIndex = headers.indexOf(“Efternamn”);
-//      var phone = headersVol.indexOf(“Telefonnummer”);
-      
-     // for (var i=0; i<values.length; i++) {
-      //var firstName = values[i][fnIndex];
-      //var lastName = values[i][lnIndex ];
-      //var phone = values[i][phone];
-      //}
-  
   var html =  HtmlService
       .createTemplateFromFile('VolList')
       .evaluate()
@@ -119,7 +128,6 @@ function getSelectedForTimeslot(){
   */
   
 }
-
 
 function getVolunteers(formObject) {
   //var volunteer = formObject.volunteer;
@@ -157,3 +165,4 @@ function getDay(dayString){
 function booked(){
   SpreadsheetApp.getUi().alert("Not implemented: mark this volunteer as booked, and save volunteer in experienced database.");
 }
+
