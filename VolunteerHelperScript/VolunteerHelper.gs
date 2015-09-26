@@ -42,10 +42,10 @@ function query(day, time, type){
   if(type){
     typeIndex = headers.indexOf(type);
   }
+  SpreadsheetApp.getUi().alert("Volunteers for the day: " + day + "\n" + "Volunteers for the day: " + values.length);
   
-  var volunteers = [];
+  var volunteers = [];    
   for(var i=0;i<values.length;i++){
-    SpreadsheetApp.getUi().alert("Volunteers for the day: " + values.length);
     
     if(typeIndex){
        if(values[i][dayIndex].indexOf(time)>-1 && values[i][typeIndex]){
@@ -75,14 +75,14 @@ function query(day, time, type){
   Logger.log(volunteers);
   Logger.log("Nr volunteers: " + volunteers.length);
 
-  
+  return volunteers;
 }
 
 function getSelectedForTimeslot(){
   
      var ss = SpreadsheetApp.getActiveSpreadsheet();
      var sheet = ss.getActiveSheet();
-  // Returns the active cell
+     // Returns the active cell
      var cell = sheet.getActiveCell();
      var row = cell.getRowIndex();
      var col = cell.getColumn();
@@ -90,12 +90,11 @@ function getSelectedForTimeslot(){
      var time = sheet.getRange(row, 1);
      var day = getDay(sheet.getName());
 
-     SpreadsheetApp.getUi().alert(time + day);
      //query("Fredag [18/9]", "10-13", "Tolk");
      //query(day, time, getColumnHeader(row, col, sheet));
   
-     query(day, time);
-     SpreadsheetApp.getUi().alert(volunteers);  
+     var volunteers = query(day, time);
+     SpreadsheetApp.getUi().alert("Volunteers for the day: " + volunteers);
 }
 
 
