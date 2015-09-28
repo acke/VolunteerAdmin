@@ -3,90 +3,81 @@
   <head>
     <base target="_top">
     <script>
-    function removeElement(divNum) {
-     var d = document.getElementById('myDiv');
-     var olddiv = document.getElementById(divNum);
-       d.removeChild(olddiv);
-    }
-    function suggestVolunteers(){
-     foreach vol
-     addbutton
-     
-    }
-    
-    function addElement() {
+      function onFailure(error) {
+        var div = document.getElementById('output');
+        div.innerHTML = "ERROR: " + error.message;
+        
+          /*
+          var p = document.createElement('p');
+          var message = "No volunteers found.\n";
+          p.innerHTML = message;
+          newdiv.appendChild(p);
+          div.appendChild(newdiv);
+          */
+      }
+      function onSuccess(volunteers) {
+        var div = document.getElementById('output');
+      
+        for (var i = 0; i < volunteers.length; i++){
+          var newdiv = document.createElement('div');
+          newdiv.style.cssText = 'padding: 5px; \
+                                  margin-bottom: 5px; \
+                                  border-radius: 5px; \
+                                  cursor: pointer; \
+                                  border-top: 1px solid #ddd; \
+                                  border-right: 2px solid #bbb; \
+                                  border-bottom: 2px solid #aaa; \
+                                  border-left: 1px solid #ccc; \
+                                  background-color: #fff; \
+                                  font-size: 12px';
+          var divIdName = 'my'+i+'Div';
+          newdiv.setAttribute('id',divIdName);
+          newdiv.onclick = function(){
+            var that = this;
+            var array = that.innerHTML.split(": ");
+            var name;
+            var surname;
+            var phone;
+            for (var j = 0; j < array.length; j++){
+              if (array[j].indexOf("Förnamn") > -1){
+                name = array[j+1].split("</p>")[0];
+                j++;
+              } else if (array[j].indexOf("Efternamn") > -1){
+                surname = array[j+1].split("</p>")[0];
+                j++;
+              } else if (array[j].indexOf("Telefon") > -1){
+                phone = array[j+1].split("</p>")[0];
+                j++;
+              }
+            }
+            
+            google.script.run.fillSlot(
+              name,
+              surname,
+              phone
+            );
+          }
+          
+          for (var prop in volunteers[i]){
+            var p = document.createElement('p');
+            p.style.cssText = 'margin: 2px 0;';
+            var message = prop + ": " + volunteers[i][prop] + "\n";
+            p.innerHTML = message;
+            newdiv.appendChild(p);
+          }
+          div.appendChild(newdiv);
+        }
+      }
 
-        var ni = document.getElementById('myDiv');
-
-        var numi = document.getElementById('theValue');
-
-        var num = (document.getElementById('theValue').value -1)+ 2;
-
-        numi.value = num;
-
-        var newdiv = document.createElement('div');
-
-        var divIdName = 'my'+num+'Div';
-
-        newdiv.setAttribute('id',divIdName);
-
-        newdiv.innerHTML = 'Element Number '+num+' has been added! <a href=\'#\' onclick=\'removeElement('+divIdName+')\'>Remove the div "'+divIdName+'"</a>';
-
-        ni.appendChild(newdiv);
-
-   }
-   </script>
+      google.script.run.withSuccessHandler(onSuccess)
+                .withFailureHandler(onFailure)
+                .getSelectedForTimeslot();
+    </script>
   </head>
   <body>
-  <div id="volunteers"></div>
-  
    <div id="output"></div>
-    
-    <input type="button" value="Close"
-        onclick="google.script.host.close()" />
-        
-    <input type="button" value="Suggest Volunteers"
-        onclick="google.script.run.loadmore()" />
-        
-    <? 
-//   var ss = SpreadsheetApp.openById('1YOXKRsaKrCQhKOuJkXnAKyLvIhxu9rhV0OxIEPn6xNI');
-  
-     var ss = SpreadsheetApp.getActiveSpreadsheet();
-     var sheet = ss.getSheetByName('Formulärsvar 1');
-     var values = sheet.getDataRange().getValues();
-     var headers = values.shift();
-   /*
-     var fnIndex = headers.indexOf(“Förnamn”);
-     var lnIndex = headers.indexOf(“Efternamn”);
-     var phone = headers.indexOf(“Telefonnummer”);
-            
-      for (var i=0; i<values.length; i++) {
-
-      //var firstName = values[i][fnIndex];
-      //var lastName = values[i][lnIndex ];
-      //var phone = values[i][phone];
-      }
-  */
-
-    ?>
-    <form id="myForm">
-    <?  
-    for (var i=0; i<values.length; i++) {
-    ?>
-    <input type="button" value=values[i][1]
-        onclick="google.script.run
-            .withSuccessHandler(updateUrl)
-            .getVolunteers(this.parentNode)" />
-            
-     <?
-     } 
-     ?>
-            
-    </form>    
-    success
   </body>
 </html>
 
 <!--QUERY(IMPORTRANGE("1YOXKRsaKrCQhKOuJkXnAKyLvIhxu9rhV0OxIEPn6xNI", "'Formulärsvar 1'!A:O") ,"select Col2, Col3, Col4, Col5, Col6, Col10, Col11, Col12 where Col6 contains '19-22' and Col11 matches '.+' order by Col1")     
 -->
-
