@@ -6,7 +6,9 @@ The system will let you organize large numbers of volunteers for configurable ta
 # Contributors
 
 Main developer VolunteerHelperScript -> Niklas Nordgren <niklas.nordgren@purplescout.se>
+
 Algorithm developer and design -> Jonatan Elsgard <jonatan.elsgard@purplescout.se>
+
 README file editor -> Knut Funkel <knut.funkel@purplescout.se>
 
 
