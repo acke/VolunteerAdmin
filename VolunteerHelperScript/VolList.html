@@ -17,7 +17,11 @@
       }
       function onSuccess(volunteers) {
         var div = document.getElementById('output');
-      
+        var filter = volunteers.filter;
+        volunteers = volunteers.volunteers;
+        var header = document.createElement('h4');
+        header.innerHTML = filter;
+        div.appendChild(header);
         for (var i = 0; i < volunteers.length; i++){
           var newdiv = document.createElement('div');
           newdiv.style.cssText = 'padding: 5px; \
@@ -68,10 +72,13 @@
           div.appendChild(newdiv);
         }
       }
-
-      google.script.run.withSuccessHandler(onSuccess)
+      window.onload = function(){
+        var isTime = document.getElementById('time') != null ? true : false;
+        var isType = document.getElementById('type') != null ? true : false;
+        google.script.run.withSuccessHandler(onSuccess)
                 .withFailureHandler(onFailure)
-                .getSelectedForTimeslot();
+                .getSelectedForTimeslot(isTime, isType);
+      }
     </script>
   </head>
   <body>
